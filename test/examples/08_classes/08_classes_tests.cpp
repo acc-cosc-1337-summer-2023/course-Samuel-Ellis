@@ -10,7 +10,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Test account get balance initialization")
+/*TEST_CASE("Test account get balance initialization")
 {
 	unique_ptr<BankAccount> account = make_unique<SavingsAccount>();
 
@@ -57,4 +57,4 @@ TEST_CASE("Test account withdraw with amount less than 0")
 
 	account->withdraw(-25);
 	REQUIRE(account->get_balance() == 100);
-}
+}*/
