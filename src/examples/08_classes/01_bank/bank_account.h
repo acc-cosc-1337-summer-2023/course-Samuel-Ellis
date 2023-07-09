@@ -14,6 +14,5 @@ public://access specifier
     virtual void withdraw(int amount) final;
 private://access specifier
     int balance{0};//explicity init to 0
-
 };
 #endif

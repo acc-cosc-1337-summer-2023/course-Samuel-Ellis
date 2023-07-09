@@ -1,7 +1,10 @@
 #include<iostream>
-
+using std::cout;
 int main()
 {
-    std::cout<<"Hello World!";
-    return 0;
+    int x = 7;
+    int* ptr = &x;
+    cout<<*ptr<<"\n";
+    cout<<&x<<"\n";
+    cout<<&ptr<<"\n";
 }
