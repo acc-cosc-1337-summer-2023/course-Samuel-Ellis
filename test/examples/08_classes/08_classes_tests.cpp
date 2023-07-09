@@ -4,13 +4,14 @@
 #include "checking_account.h"
 #include "savings_account.h"
 #include<memory>
+
 using std::unique_ptr; using std::make_unique;
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-/*TEST_CASE("Test account get balance initialization")
+TEST_CASE("Test account get balance initialization")
 {
 	unique_ptr<BankAccount> account = make_unique<SavingsAccount>();
 
@@ -20,12 +21,14 @@ TEST_CASE("Verify Test Configuration", "verification") {
 TEST_CASE("Test account get balance with param constructor")
 {
 	unique_ptr<BankAccount> account = make_unique<CheckingAccount>(100);
+
 	REQUIRE(account->get_balance() == 100);
 }
 
 TEST_CASE("Test account deposit")
 {
 	unique_ptr<BankAccount> account = make_unique<SavingsAccount>(100);
+	
 	REQUIRE(account->get_balance() == 105);
 
 	account->deposit(50);
@@ -45,7 +48,7 @@ TEST_CASE("Test account withdraw")
 {
 	unique_ptr<BankAccount> account = make_unique<SavingsAccount>(100);
 	REQUIRE(account->get_balance() == 105);
-
+	
 	account->withdraw(25);
 	REQUIRE(account->get_balance() == 80);
 }
@@ -57,4 +60,4 @@ TEST_CASE("Test account withdraw with amount less than 0")
 
 	account->withdraw(-25);
 	REQUIRE(account->get_balance() == 100);
-}*/
+}
