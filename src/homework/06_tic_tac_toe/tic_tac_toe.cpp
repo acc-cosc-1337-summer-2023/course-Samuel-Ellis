@@ -1,6 +1,5 @@
 //cpp
 #include "tic_tac_toe.h"
-
 using std::cout;
 
 bool TicTacToe::game_over(){
