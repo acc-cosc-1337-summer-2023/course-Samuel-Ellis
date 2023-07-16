@@ -1,5 +1,6 @@
 //cpp
 #include "tic_tac_toe.h"
+#include<cmath>
 using std::cout;
 
 bool TicTacToe::game_over(){
@@ -32,8 +33,12 @@ void TicTacToe::mark_board(int position){
 }
 
 void TicTacToe::display_board() const{
-    for(long unsigned int i=0; i<pegs.size(); i+=3){
-        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";
+    for(long unsigned int i=0; i<pegs.size(); i+=std::sqrt(pegs.size())){
+        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2];
+        if(pegs.size() == 16){
+            cout<<"|"<<pegs[i+3];
+        }
+        cout<<"\n";
     }
 }
 
@@ -63,53 +68,17 @@ bool TicTacToe::check_board_full(){
 }
 
 bool TicTacToe::check_column_win(){
-    if(pegs[0] == "X" && pegs[3]=="X" && pegs[6]=="X"){
-        return true;
-    } else if(pegs[1] == "X" && pegs[4]=="X" && pegs[7]=="X"){
-        return true;
-    } else if(pegs[2] == "X" && pegs[5]=="X" && pegs[8]=="X"){
-        return true;
-    } else if(pegs[0] == "Y" && pegs[3]=="Y" && pegs[6]=="Y"){
-        return true;
-    } else if(pegs[1] == "Y" && pegs[4]=="Y" && pegs[7]=="Y"){
-        return true;
-    } else if(pegs[2] == "Y" && pegs[5]=="Y" && pegs[8]=="Y"){
-        return true;
-    } else {
-        return false;
-    }
+    return false;
+
 }
 
 bool TicTacToe::check_row_win(){
-    if(pegs[0] == "X" && pegs[1]=="X" && pegs[2]=="X"){
-        return true;
-    } else if(pegs[3] == "X" && pegs[4]=="X" && pegs[5]=="X"){
-        return true;
-    } else if(pegs[6] == "X" && pegs[7]=="X" && pegs[8]=="X"){
-        return true;
-    } else if(pegs[0] == "Y" && pegs[1]=="Y" && pegs[2]=="Y"){
-        return true;
-    } else if(pegs[3] == "Y" && pegs[4]=="Y" && pegs[5]=="Y"){
-        return true;
-    } else if(pegs[6] == "Y" && pegs[7]=="Y" && pegs[8]=="Y"){
-        return true;
-    } else {
-        return false;
-    }
+    return false;
+
 }
 
 bool TicTacToe::check_diagonal_win(){
-    if(pegs[0] == "X" && pegs[4]=="X" && pegs[8]=="X"){
-        return true;
-    } else if(pegs[6] == "X" && pegs[4]=="X" && pegs[2]=="X"){
-        return true;
-    } else if(pegs[0] == "Y" && pegs[4]=="Y" && pegs[8]=="Y"){
-        return true;
-    } else if(pegs[6] == "Y" && pegs[4]=="Y" && pegs[2]=="Y"){
-        return true;
-    } else {
-        return false;
-    }
+    return false;
 }
 
 void TicTacToe::set_winner(){
