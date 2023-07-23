@@ -1,7 +1,5 @@
 //add function(s) code here
 #include "arrays.h"
-#include<iostream>
-using std::cout;
 
 ArrayList::ArrayList(int* array_list, int capacity) :
     elements(array_list)

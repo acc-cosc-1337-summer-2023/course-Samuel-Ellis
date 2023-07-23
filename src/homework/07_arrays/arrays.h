@@ -1,7 +1,7 @@
 //add function(s) prototype
 
-#ifndef ARRAYS_H
-#define ARRAYS_H
+#ifndef ARRAY_LIST_H
+#define ARRAY_LIST_H
 
 class ArrayList
 {
